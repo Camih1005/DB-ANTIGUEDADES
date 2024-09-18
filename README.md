@@ -2,12 +2,11 @@
 
 
 -- 1
- 
+ ``` sql
 select a.nombre,c.nombre_categoria,a.precio,a.estado_conservacion from Antiguedades as a 
 join Estatus_Antiguedad as ea on a.estatus_id = ea.estatus_id
 join categorias as c on c.categoria_id = a.categoria_id
 where ea.estatus_id = 4;
-
 -- resultado
 
 nombre        |nombre_categoria|precio|estado_conservacion|
@@ -15,15 +14,15 @@ nombre        |nombre_categoria|precio|estado_conservacion|
 Vaso Romano   |Antigüedades    |100.00|Excelente          |
 Moneda Antigua|Coleccionables  |200.00|Restaurado         |
 Mesa Antigua  |Furniture       |800.00|Excelente          |
-
+``` 
 -- 2
-
+``` sql
 SELECT a.nombre, c.nombre_categoria, a.precio, a.estado_conservacion
 FROM Antiguedades a
 JOIN categorias c ON a.categoria_id = c.categoria_id
 WHERE c.nombre_categoria = 'Arte' AND a.precio BETWEEN 100 AND 2000;
 
-
+``` 
 -- 3
 
 SELECT a.nombre, t.fecha_transaccion, t.precio_final, u.nombre AS comprador
